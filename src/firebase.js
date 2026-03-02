@@ -1,7 +1,6 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore"; // 🌟 引入 Firestore 数据库模块
+import { getFirestore } from "firebase/firestore";
 
-// 这是你专属的 LearningTree Dayhome 配置密钥
 const firebaseConfig = {
   apiKey: "AIzaSyDSVoDKuzXdtSD6-Z1iOV5iAG6jZiDP68g",
   authDomain: "learning-tree-dayhom.firebaseapp.com",
@@ -12,8 +11,7 @@ const firebaseConfig = {
   measurementId: "G-T0LG6Y3MH5"
 };
 
-// 启动 Firebase 引擎
 const app = initializeApp(firebaseConfig);
 
-// 🌟 导出 db (数据库)，这样你的 App.jsx 就能直接存取名单了！
-export const db = getFirestore(app);
+// 🌟 关键修复：明确告诉系统，我们的数据库名字叫 "dayhome"
+export const db = getFirestore(app, "dayhome");
